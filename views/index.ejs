@@ -1,0 +1,60 @@
+<%- include("./partials/header") %>
+    <div>
+    <img src="https://thumbs.dreamstime.com/b/blog-information-website-concept-workplace-background-text-top-view-above-146011517.jpg" style = "width:100%; height:100vh; z-index:100; " alt="">
+</div>
+
+<%- include("./partials/navbar") %>  
+
+   <!-- <div class="container">
+
+       <div class="box">Recipie</div>
+   </div> -->
+
+   <section>
+    <%  for(var i = blog.length-1;i > (blog.length -6) ;i--){ %>
+
+       <div class="container" > 
+        <h2 class = "perhead"> <%= blog[i].title %></h2>
+     <div class="row code" style=" display: flex; align-items: center; justify-content: center; background-color: 
+     #FDB813; 
+     background-color: rgba(51, 51, 51, 0.87);">
+     
+       <div class="col-sm-12 col-md-12 col-lg-6">
+       <div class="code-1 ">
+
+       <img src=" <%= blog[i].image %>" alt=""class="code-pic">
+
+      </div>
+
+     </div>
+     
+     <div class="col-sm-12 col-md-12 col-lg-6">
+       <div class="code-2">
+         <p>
+           <h2>My-Blog</h2>
+           <br>
+          <%= blog[i].discription %>
+          <br><br>
+    
+
+ <a href="/index/<%= blog[i]._id %>" class = "btn2">Show details         <i class="zmdi zmdi-eye"></i> </a>
+ <span href="" class = "btn2">Category: <%= blog[i].category %></span>
+       </p>
+  
+     </div>
+
+
+       </div>
+
+       <div style= " margin: auto; display: flex; flex-wrap: wrap;align-items: center; justify-content: center;">
+       <p class = "btn1"> Author name: <%= blog[i].author %></p>
+     
+     <p class = "btn3 "> Created Date: <%= blog[i].date %></p>
+    </div> </div>
+     </div>
+     </div>
+     <% } %>
+     </section>
+<br><br>
+<%- include("./partials/footer") %>    
+

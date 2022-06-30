@@ -1,0 +1,111 @@
+<%- include("./partials/header") %>
+    <%- include("./partials/navbar") %>  
+<br><br><br>
+<br>
+<!-- <div style = "margin-top: 10%;"> -->
+
+
+<section class="form" >
+  <div class="container " style = "text-align:center ; " >   <h2 class = "perhead">Create</h2></div>
+
+      <div class="row" style = "width:99.7vw;" >     
+  <div class="col-lg-6 mb-3  p-4 colo " style="height: 100vh;"  >
+          <h3 class="text-center">Make a new blog</h3>
+    <br> <img src="https://cdn-images-1.medium.com/max/1600/1*PnE3NiAH-6vH1Rrt-Xcvig.png" style = "padding-top:4%; width:100%; height:390px; margin: auto; " alt="">
+</div> 
+         <!-- Title-->
+
+        <div class="col-lg-6 bg-light pt-4">
+          <form action="/index" method= "post">
+            <div class="row">
+              <div class="mb-3 col-md-6">
+                <label for="title" class="form-label">Title:</label>
+                <input
+                  id="title"
+                  name="title"
+                  class="form-control"
+                  type="text"
+                  placeholder="Enter your title"
+                />
+              </div>
+
+            <!-- author -->
+              <div class="mb-3 col-md-6 ">
+                <label for="author" class="form-label">Author:</label>
+                <input id="author" name="author" class="form-control" type="text"
+                placeholder="Enter author name" />
+              </div>
+            </div>
+            <!-- description -->
+         <div class="mb-3 col-md-12">
+           <p>  Description:</p>
+
+           <textarea name="discription" id="discription" cols="50" rows="2" placeholder="Enter description"></textarea>
+          </div>
+
+<!-- created date -->
+
+
+      <div class="mb-3 col-md-12">
+        <label for="date" class="form-label">Created Date:</label>
+        <input
+          id="date"
+          name="date"
+          class="form-control"
+          type="date"   />
+      </div>
+
+
+      <!-- catagory -->
+      <div class="mb-3 col-md-6"style="margin-top:30px;">
+        <label for="category" class="form-label">Category :</label>
+        <select id="category" name="category">
+            <option value="category">Select a Category</option>
+            <option value="food">Food</option>
+            <option value="technology">Technology</option>
+            <option value="photography">Photography</option>
+            <option value="future">Future</option>
+            <option value="fashion">Fashion</option>
+            <option value="lifestyle">lifestyle</option>
+            <option value="education">Education</option>
+            <option value="arts">Arts</option>
+            <option value="movies">Movies</option>
+            <option value="Other">Other</option>
+          </select>
+      </div>
+
+    <!-- image -->
+    <div class="mb-3 col-md-12">
+      <label for="image" class="form-label">Image:</label>
+      <input
+        id="image"
+        name="image"
+        class="form-control"
+        type="url"
+        placeholder="Enter image url"
+      />
+    </div>
+
+    <!-- create -->
+            <div class="form-check mb-3" >
+      
+            <div class="">
+              <button class="btn btn-success" style = "display: block; margin: auto;width:200px ">Create</button>
+            </div>
+
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+<!-- footer -->
+</section>
+
+
+
+  
+
+<%- include("./partials/footer") %>   

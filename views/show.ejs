@@ -1,0 +1,58 @@
+<%- include("./partials/header") %>
+
+<%- include("./partials/navbar") %>  
+<br><br><br>
+<section>
+    
+    <div class="container"> 
+     <h2 class = "perhead"> <%= blog.title %></h2>
+  <div class="row code" style="   background-color: 
+  #FDB813;
+  background-color: rgba(51, 51, 51, 0.87);">
+  
+    <div class="col-sm-12 col-md-12 col-lg-6">
+    <div class="code-1 ">
+    <img src="<%= blog.image %>" alt=""class="code-pic">
+    </div>
+  </div>
+  
+  <div class="col-sm-12 col-md-12 col-lg-6">
+    <div class="code-2">
+      <p>
+        <h2>My-Blog</h2>
+        <br>
+        <%= blog.discription %>
+       <br><br>
+
+       <div style= " margin: auto; display: flex; flex-wrap: wrap;align-items: center; justify-content: center;">
+        <span href="" class = "btn2" style = "display: inline-block; margin-top: 1%;"> Category: <%= blog.category %></span>
+<a class = "btn2" href = "/update?id=<%=blog._id%>"> Edit <i class="zmdi zmdi-edit"></i></a>
+<a href = "/delete/<%= blog._id %>" class = "btn2" > Delete <i class="zmdi zmdi-delete "></i>  </a>
+
+
+</div>   
+</p>
+
+  </div>
+
+
+    </div>
+
+    <div style= " margin: auto; display: flex; flex-wrap: wrap;align-items: center; justify-content: center;">
+    <p class = "btn1"> Author name: <%= blog.author %></p>
+  
+  <p class = "btn1"> Created Date: <%= blog.date %></p>
+
+
+
+ </div> 
+
+</div>
+
+  </div>
+
+  </div>
+
+  </section>
+
+<%- include("./partials/footer") %>  
