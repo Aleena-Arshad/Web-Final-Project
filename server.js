@@ -14,33 +14,36 @@ const views= path.join(__dirname,"/views")
 
 app.use(express.static(static_path));
 app.use(express.static(views));
+app.use(express.json());
 
 app.set("view engine", "ejs");
 
 //import schema
 const connectDB = require("./db/connection");
 
-
-const { userInfo } = require("os");
 connectDB()
 
 const blogdb =require("./model/scheme.js");
-const { title } = require("process");
 
 app.use(express.urlencoded({extended:false}));
 
 // home and search 
-app.get("/index",async(req,res)=>{
+app.get("/index",(req,res)=>{
     if(req.query.category){
         let user={};
             user = {category:req.query.category.split(',')};
-           const blog = await blogdb.find(user);
-           if(!blog){       
-           res.render("error/error2")
-                 }
-                 else{  
-                 res.render("category",{blog});
-             }}
+           blogdb.find(user).then(blog=>{
+            if(!blog){       
+                res.render("error/error2")
+                      }
+                      else{  
+                          console.log(blog)
+                      res.render("category",{blog});
+                  }}).catch(err=>{
+                      res.render("error/error2");
+                  })
+                     }
+          
 else
 {
     blogdb.find().then(blog=>{
@@ -94,7 +97,6 @@ app.get("/show_blogs",(req,res)=>{
         })}
     })
     
-
 // create 
 app.get("/create",(req,res)=>{
     res.render("create")

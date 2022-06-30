@@ -6,6 +6,7 @@
 <%- include("./partials/navbar") %>  
 <br><br><br>
 <h1 class = "perhead3">All Blogs </h1>
+
    <section>
     <%  for(var i = 0;i <blog.length ;i++){ %>
 
@@ -45,7 +46,9 @@
      </div>
      </div>
      <% } %>
+     <button class = "blogs"> Total no. of Blogs = <%= blog.length %></button>
      </section>
+
 <br><br>
 <%- include("./partials/footer") %>    
 
