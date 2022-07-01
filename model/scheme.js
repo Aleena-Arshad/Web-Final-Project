@@ -15,8 +15,10 @@ var schema = new mongoose.Schema({
     discription:
     {
         type:String,
+        minlength:65,
+   
         required:true,
-        minlength:65
+
     },
     image:
     {
@@ -32,6 +34,7 @@ var schema = new mongoose.Schema({
     {
         type:String,
         required:true
+
 
     }
 })
