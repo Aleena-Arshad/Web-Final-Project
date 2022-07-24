@@ -120,7 +120,7 @@ else{
        date:req.body.date,
        category:req.body.category
     })
-    blog.save(blog).then(blog=>{
+    blog.save().then(blog=>{
         res.redirect("/index")
     })
     .catch(err=>
