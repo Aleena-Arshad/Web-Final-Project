@@ -9,7 +9,13 @@
 
        <div class="box">Recipie</div>
    </div> -->
+<div class="container">
+  <h3 class = "nichehead"> Introduction about niche</h3>
+  <p class = "pniche">
+    This website includes different blogs about arts and design, travelling, food, photography etc with different categories. These all belong to "informatics" niche. Each blog belongs to a category. They give information about the perticular blog. You can search the blog by its category. You can also view that perticular blog and edit and delete as well.
 
+  </p>
+</div>
    <section>
     <%  for(var i = blog.length-1;i > (blog.length -6) ;i--){ %>
 
@@ -46,10 +52,10 @@
 
        </div>
 
-       <div style= " margin: auto; display: flex; flex-wrap: wrap;align-items: center; justify-content: center;">
+       <div style= " display: flex; flex-wrap: wrap; align-items: center; justify-content: center;">
        <p class = "btn1"> Author name: <%= blog[i].author %></p>
      
-     <p class = "btn3 "> Created Date: <%= blog[i].date %></p>
+     <p class = "btn3 "> Created Date: <%= blog[i].date.toDateString() %></p>
     </div> </div>
      </div>
      </div>

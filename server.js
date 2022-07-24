@@ -5,11 +5,13 @@ const app = express();
 const path = require("path");
 const ejs = require('ejs');
 
-const axios = require("axios");
+// const axios = require("axios");
 
 //getting path of public folder
+
 const static_path= path.join(__dirname,"/public")
 //getting path of views folder
+
 const views= path.join(__dirname,"/views")
 
 app.use(express.static(static_path));
@@ -21,18 +23,18 @@ app.set("view engine", "ejs");
 //import schema
 const connectDB = require("./db/connection");
 
-connectDB()
+connectDB();
 
 const blogdb =require("./model/scheme.js");
+
+// encode sp chr in url 
 
 app.use(express.urlencoded({extended:false}));
 
 // home and search 
 app.get("/index",(req,res)=>{
     if(req.query.category){
-        let user={};
-            user = {category:req.query.category.split(',')};
-           blogdb.find(user).then(blog=>{
+           blogdb.find({category:req.query.category}).then(blog=>{
             if(!blog){       
                 res.render("error/error2")
                       }
@@ -53,6 +55,7 @@ else
     res.render("error/error2")
     })}
 })
+// show p
 app.get("/index/:id",(req,res)=>{
     if(req.params.id){
        const id = req.params.id;
@@ -103,7 +106,7 @@ app.get("/create",(req,res)=>{
 })
 
 
-app.post("/index",async(req,res)=>{
+app.post("/index",(req,res)=>{
     if(!req.body){
         res.status(400).render("error/error2")
     }
@@ -164,8 +167,6 @@ app.post("/update/:id",(req,res)=>{
     })
    }
 })
-
-
 
 
 //delete

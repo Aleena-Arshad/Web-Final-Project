@@ -28,7 +28,8 @@ var schema = new mongoose.Schema({
     date:
     {
         type:Date,
-        required:true       
+        required:true,
+        default: new Date()    
     },
     category:
     {
@@ -38,6 +39,7 @@ var schema = new mongoose.Schema({
 
     }
 })
+// blog is the name of collection in mongodb compass ( databse)
 const blogdb = mongoose.model('blog',schema)
 module.exports = blogdb
 

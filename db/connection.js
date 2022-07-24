@@ -3,14 +3,14 @@ const mongoose = require("mongoose")
 const connectDB= async()=>{
     try{
         mongoose.connect('mongodb://localhost:27017/Web-Final-Project',{
-    useNewUrlParser: true,
-})
+    useNewUrlParser: true,})
+
     console.log(`connection successful`);
     }
 catch(e){
     console.log(`no connection`);
 }};
-module.exports=connectDB;
+module.exports = connectDB;
 
 
 

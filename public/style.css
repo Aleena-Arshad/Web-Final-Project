@@ -297,3 +297,15 @@
   background-image: linear-gradient(315deg, #1f66cf 0%, #91c6fa 74%);
   color: black;
 }
+
+.nichehead {
+  margin-top: 2%;
+  text-align: center;
+  color: #dd4b39;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.pniche {
+  text-align: center;
+  margin-top: 1%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
